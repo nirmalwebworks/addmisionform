@@ -3,97 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admission Form</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Admission Form | Nirmal Kumar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="form.css">
 </head>
 <body>
-    <div class="head">
-        <h1>ADMISSION FORM</h1>
-        <p>Thank you for applying to our college Please fill the form below to complete the admission registration process.</p>
-    </div>
-    <div class="first">
-    <form action="https://formspree.io/f/xnnbzbnn" method="post">
-        <label for="Name">Name</label>
-        <input type="text" name="FirstName" placeholder="First Name" required>&nbsp;
-        <input type="text" name="LastName" placeholder="Last Name" required>
-    </div>
-    <div class="gender">
-        <label for="gender">Gender</label>&nbsp;
-        <input type="radio" id="male" name="Gender" value="male">
-        <label for="male">Male</label>&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" id="female" name="Gender" value="female">
-        <label for="female">Female</label><br>
-    </div>
-    <div class="first">
-         <label for="birth">Date of Birth</label>
-        <input type="date" name="DOB" required>
-    </div>   
-    <div class="first">
-         <label for="bloodgroup">Blood Group</label>
-        <input type="text" name="Bloodgroup" placeholder="Your Blood Group" required><br>
-    </div>  
-    <div class="first">
-         <label for="Contact">Mobile Number</label>
-        <input type="text" name=" PersonalNumber" placeholder="Your 10 Digit Number" pattern="\d{10}" maxlength="10" required>
-    </div>  
-    <div class="first">
-         <label for="email">Email Address</label>
-        <input type="email" name="PersonalEmail" placeholder="Your Email Adress" required><br>
-    </div>  
-    <div class="first">
-         <label for="father">Father's Name</label>
-        <input type="text" name="FathersName" placeholder="Full Name" required>
-    </div>  
-    <div class="first">
-         <label for="mother">Mother's Name</label>
-        <input type="text" name="MothersName" placeholder="Full Name" required>
-    </div>   
-    <div class="second">
-         <label for="current">Permanent Address:</label>
-        <input type="text" name="Adress" placeholder="Area" required>
-        <input type="text" name="Adress" placeholder="City" required>
-        <input type="text" name="Adress" placeholder="State" required>
-        <input type="text" name="Adress" placeholder="Zipcode" required>
-    </div>    
-    <div class="first">
-         <label for="nationality">Nationality</label>
-        <input type="text" name="Nationality" required>
-    </div>  
-    <div class="first">
-         <label for="religion">Religion</label>
-        <input type="text" name="Religion" required><br> 
-    </div>  
-    <div class="second">
-        <label for="gender">Do you speak any other language other than English?</label>&nbsp;
-        <input type="radio" id="yes" name="Do you speak any other language other than English?" value="male">
-        <label for="yes">Yes</label>&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" id="no" name="Do you speak any other language other than English?" value="no">
-        <label for="no">No</label><br>
-    </div>  
-    <div class="first">
-        <label for="course">Please select your course!</label>
-        <select id="options" name="options" required>
-            <option value="select">Please select your course!</option>
-            <option value="BBM">BBM</option>
-            <option value="MBA">MBA</option>
-            <option value="BCA">BCA</option>
-            <option value="MCA">MCA</option>
 
-        </select>
+    <div class="container d-flex justify-content-center">
+        <div class="form-container">
+            <div class="text-center mb-5">
+                <h1>ADMISSION FORM</h1>
+                <p class="text-muted">Join our academic community today.</p>
+            </div>
+
+            <form id="admissionForm" class="needs-validation" action="https://formspree.io/f/xnnbzbnn" method="post" novalidate>
+                
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <label for="FirstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" name="FirstName" required>
+                        <div class="invalid-feedback">First name is required.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="LastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" name="LastName" required>
+                        <div class="invalid-feedback">Last name is required.</div>
+                    </div>
+                </div>
+
+                <div class="mb-4"> <label class="form-label d-block mb-2">Gender</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="male" name="Gender" value="male" required>
+                        <label class="form-check-label" for="male">Male</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="female" name="Gender" value="female" required>
+                        <label class="form-check-label" for="female">Female</label>
+                    </div>
+                    <div class="invalid-feedback">Please select a gender.</div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <label for="DOB" class="form-label">Date of Birth</label>
+                        <input type="date" class="form-control" name="DOB" required>
+                        <div class="invalid-feedback">Date of birth is required.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="Bloodgroup" class="form-label">Blood Group</label>
+                        <select class="form-select" name="Bloodgroup" required>
+                            <option value="">Select Group</option>
+                            <option value="A+">A+</option>
+                            <option value="A-">A-</option>
+                            <option value="B+">B+</option>
+                            <option value="B-">B-</option>
+                            <option value="O+">O+</option>
+                            <option value="O-">O-</option>
+                            <option value="AB+">AB+</option>
+                            <option value="AB-">AB-</option>
+                        </select>
+                        <div class="invalid-feedback">Please select a blood group.</div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <label for="PersonalNumber" class="form-label">Mobile Number</label>
+                        <input type="tel" class="form-control" id="phone" name="PersonalNumber" placeholder="10 Digit Number" pattern="[0-9]{10}" maxlength="10" inputmode="numeric" required>
+                        <div class="invalid-feedback">Please enter a valid 10-digit number.</div>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="PersonalEmail" class="form-label">Email Address</label>
+                        <input type="email" class="form-control" name="PersonalEmail" placeholder="name@example.com" required>
+                        <div class="invalid-feedback">Please enter a valid email.</div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <label for="FathersName" class="form-label">Father's Name</label>
+                        <input type="text" class="form-control" name="FathersName" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="MothersName" class="form-label">Mother's Name</label>
+                        <input type="text" class="form-control" name="MothersName" required>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label">Permanent Address</label>
+                    <div class="row g-2">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="Address_Area" placeholder="Area / Street" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="Address_City" placeholder="City" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="Address_State" placeholder="State" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" name="Address_Zip" placeholder="Zipcode" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                        <label for="Nationality" class="form-label">Nationality</label>
+                        <input type="text" class="form-control" name="Nationality" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="Religion" class="form-label">Religion</label>
+                        <input type="text" class="form-control" name="Religion" required>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <label class="form-label d-block">Other Languages Spoken?</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="lang_yes" name="OtherLanguage" value="yes" required>
+                        <label class="form-check-label" for="lang_yes">Yes</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" id="lang_no" name="OtherLanguage" value="no" required>
+                        <label class="form-check-label" for="lang_no">No</label>
+                    </div>
+                </div>
+
+                <div class="mb-5">
+                    <label for="courseSelect" class="form-label">Select Your Course</label>
+                    <select class="form-select" id="courseSelect" name="Course" required onchange="updateFee()">
+                        <option selected disabled value="">Choose a course...</option>
+                        <option value="BBM">BBM (Bachelor of Business Management)</option>
+                        <option value="MBA">MBA (Master of Business Administration)</option>
+                        <option value="BCA">BCA (Bachelor of Computer Applications)</option>
+                        <option value="MCA">MCA (Master of Computer Applications)</option>
+                    </select>
+                    <div class="invalid-feedback">Please select a course to proceed.</div>
+                    
+                    <div id="fee-display">
+                        Estimated Annual Fee: <span id="fee-amount">₹0</span>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <button type="reset" class="btn btn-danger" onclick="hideFee()">Reset</button>
+                    <button type="submit" class="btn btn-primary px-5 shadow">Submit</button>
+                </div>
+
+                <input type="hidden" name="_redirect" value="https://yourwebsite.com/thank-you.html">
+
+            </form>
+            
+            <div class="footer text-center small text-muted">
+                <p>&copy; 2025 NirmalWebWorks<br> Designed & Developed By Nirmal Kumar</p>
+            </div>
+        </div>
     </div>
-    <div class="container">
-    <div class="button">
-        <button type="reset" class="btn btn-danger">Reset</button>
-    </div>
-    <div class="button">
-       <input class="btn btn-primary" type="submit" value="Submit">
-    </div>
-    </div>
-    <input type="hidden" name="_redirect" value="https://yourwebsite.com/thank-you.html">
-    <div class="footer">
-        <nav>All Rights Reserved &copy <br> Designed & Developed By Nirmal Kumar</nav>
-    </div>
-    </form>
+
+    <script>
+        // Set max date for DOB to today
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementsByName("DOB")[0].setAttribute('max', today);
+
+        // 1. Dynamic Fee Calculator
+        function updateFee() {
+            const course = document.getElementById("courseSelect").value;
+            const feeBox = document.getElementById("fee-display");
+            const feeAmount = document.getElementById("fee-amount");
+            
+            let price = 0;
+
+            // Set prices based on course
+            switch(course) {
+                case "BBM": price = "₹50,000"; break;
+                case "MBA": price = "₹1,20,000"; break;
+                case "BCA": price = "₹60,000"; break;
+                case "MCA": price = "₹1,00,000"; break;
+                default: price = "0";
+            }
+
+            // Show the box and update text if a valid course is selected
+            if(course) {
+                feeBox.style.display = "block";
+                feeAmount.innerText = price;
+            }
+        }
+
+        // 2. Reset Function to hide fee box
+        function hideFee() {
+            document.getElementById("fee-display").style.display = "none";
+        }
+
+        // 3. Form Validation (Bootstrap Standard)
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+
+            Array.prototype.slice.call(forms)
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+                        }
+
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
